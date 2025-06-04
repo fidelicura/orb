@@ -15,7 +15,7 @@ pub fn build(b: *std.Build) !void {
         .name = "kernel",
         .code_model = .medium,
     });
-    kernel.setLinkerScriptPath(b.path("src/linker.ld"));
+    kernel.setLinkerScript(b.path("src/linker.ld"));
     kernel.addCSourceFiles(.{
         .files = &.{"src/boot.s"},
         .flags = &.{
